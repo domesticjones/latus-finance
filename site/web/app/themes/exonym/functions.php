@@ -13,5 +13,5 @@
 	require_once(TEMPLATEPATH . '/functions/plugins.php'); // Plugin Dependencies
 	require_once(TEMPLATEPATH . '/functions/sanity.php'); // Check Extension Use
 
-	// Family Chit Plugin
-	require_once(TEMPLATEPATH . '/family-chit/family-chit.php');
+	// Latus Finance Plugin
+	require_once(TEMPLATEPATH . '/latus-finance/latus-finance.php');
