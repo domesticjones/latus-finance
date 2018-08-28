@@ -1,0 +1,104 @@
+.page-overview {
+  @include grid(space-between, center, column);
+
+  @extend %container;
+
+  header {
+    width: 100%;
+    padding: 3.5vw;
+
+    img {
+      display: block;
+      width: auto;
+      height: 8.5vw;
+      margin: 0 auto;
+    }
+  }
+}
+
+section.overview-photo {
+  position: relative;
+  display: block;
+  width: 68vw;
+  height: 68vw;
+  border: 1vw solid $green;
+  border-radius: 100%;
+
+  img {
+    display: block;
+    border-radius: 100%;
+    width: 60vw;
+    margin: 3vw;
+  }
+}
+
+section.overview-name {
+  padding: 5vw;
+  text-align: center;
+
+  h1 {
+    font-size: 6vw;
+    font-weight: $font-normal;
+  }
+
+  a {
+    color: $green;
+  }
+}
+
+h1.overview-title {
+  width: 100%;
+  font-size: 6vw;
+  background-color: $black;
+  color: $white;
+  padding: 5vw;
+  text-align: center;
+  font-weight: $font-light;
+}
+
+h2.overview-date {
+  font-size: 4vw;
+  font-weight: $font-light;
+  letter-spacing: 1vw;
+}
+
+ul.overview-data {
+  @include listStripped();
+
+  width: 100%;
+  padding-bottom: 10vw;
+
+  li {
+    @include grid();
+
+    width: 100%;
+    padding: 1vw 0;
+  }
+
+  .label {
+    width: 50%;
+    padding-right: 1.5vw;
+    text-align: right;
+
+    @include fontBold();
+  }
+
+  .number {
+    width: 50%;
+    padding-left: 1.5vw;
+
+    &::before {
+      content: '$';
+      display: inline;
+    }
+
+    sup {
+      font-size: 3vw;
+
+      &::before {
+        content: '.';
+        display: inline;
+      }
+    }
+  }
+}

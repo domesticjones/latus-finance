@@ -6,10 +6,12 @@ body {
   max-width: 100%;
 }
 
-.wrap {
-  margin: 0 auto;
-  max-width: 100%;
+%container {
   position: relative;
+  z-index: 0;
+  padding-bottom: 17vw;
+  min-height: 100vh;
+  min-width: 100vw;
 }
 
 /**
@@ -20,40 +22,3 @@ a {
 }
 
 @include linkColor($black, all);
-
-/**
-  Wordpress Image ALignment
-  ---------------------------------------------------------------------- */
-.aligncenter {
-  margin: 1em auto;
-}
-
-.alignleft {
-  margin: 1em 1em 1em 0;
-}
-
-.alignright {
-  margin: 1em 0 1em 1em;
-}
-
-/**
-  Responsive Breakpoints
-  ---------------------------------------------------------------------- */
-@media (min-width: 1025px) {
-  .wrap {
-    width: 1150px;
-  }
-}
-
-@media (min-width: 1400px) {
-  .wrap {
-    width: 1400px;
-  }
-}
-
-@media (max-width: 1024px) {
-  .wrap {
-    width: 100%;
-    padding: 0 2rem;
-  }
-}
