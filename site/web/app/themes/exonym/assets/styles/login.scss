@@ -1,0 +1,78 @@
+@import "config/colors";
+@import "config/typography";
+@import "config/grid";
+@import "config/reset";
+@import "config/forms";
+
+body.login {
+  background-color: $black;
+  font-family: $font-default;
+  width: 100vw;
+  height: 100vh;
+
+  #login {
+    @include grid(center, center, column);
+
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 5vw;
+  }
+
+  h1 {
+    width: 100%;
+
+    a {
+      background-image: url('images/logo-latus-white.svg');
+      background-size: contain;
+      width: 100%;
+      height: 30vw;
+    }
+  }
+
+  form {
+    padding: 10vw;
+    width: 100%;
+  }
+
+  label {
+    display: block;
+    width: 100%;
+    color: $black;
+    font-weight: $font-light;
+    font-size: 3.5vw !important;
+    letter-spacing: 0.25vw;
+    text-align: center;
+
+    @include fontItalic();
+
+    input {
+      box-shadow: none;
+      outline: none;
+      text-align: center;
+      background-color: $white !important;
+
+      &:focus,
+      &:active {
+        border-color: $black;
+        box-shadow: none;
+        outline: none;
+      }
+    }
+  }
+
+  .button-primary {
+    background-color: $green;
+    text-shadow: none;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    margin-top: 5vw;
+  }
+
+  p.forgetmenot {
+    @include grid(center, center);
+
+    width: 100%;
+  }
+}

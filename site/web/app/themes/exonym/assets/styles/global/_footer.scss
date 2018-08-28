@@ -1,8 +1,37 @@
 /**
   Global Website Footer
   ---------------------------------------------------------------------- */
-.nav-footer {
-  @include navMenu(vertical);
+#nav-footer {
+  @include grid(center, stretch);
+
+  box-shadow: $dropShadowReverse;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.nav-footer-item {
+  @include grid(space-between, center, column);
+
+  width: 20vw;
+  background-color: $black;
+  padding: 2.5vw;
+
+  &.is-active {
+    background-color: $green;
+  }
+
+  img {
+    height: 7.5vw;
+    width: auto;
+    margin-bottom: 2.5vw;
+  }
+
+  span {
+    font-size: 2.5vw;
+    color: $white;
+  }
 }
 
 /**

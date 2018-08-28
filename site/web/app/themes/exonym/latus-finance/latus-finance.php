@@ -4,3 +4,4 @@
   require_once('functions/accounts.php');
   require_once('cpt.php');
   require_once('functions/status.php');
+  require_once('functions/admin.php');

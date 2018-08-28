@@ -31,17 +31,6 @@
     wp_enqueue_script('custom-login', asset_path('scripts/login.js'));
   }
 
-  // Custom Login Logo
-  function custom_login_logo() { ?>
-    <style type="text/css">
-      #login h1 a,
-      .login h1 a {
-        background-image: url();
-      }
-    </style>
-  <?php }
-  add_action('login_enqueue_scripts', 'custom_login_logo');
-
   // Enable SVG upload in admin
   function wpcontent_svg_mime_type($mimes = array()) {
     $mimes['svg']  = 'image/svg+xml';
