@@ -1,0 +1,21 @@
+/** Configuration Components
+ ---------------------------------------------------------*/
+@import
+  'config/effects',
+  'config/functions',
+  'config/grid',
+  'config/reset',
+  'config/colors',
+  'config/typography',
+  'config/forms',
+  'config/hamburger'
+;
+
+/** Global Elements
+ ---------------------------------------------------------*/
+@import
+  'global/base',
+  'global/navigation',
+  'global/header',
+  'global/footer'
+;
