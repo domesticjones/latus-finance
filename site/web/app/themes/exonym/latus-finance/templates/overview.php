@@ -1,6 +1,7 @@
 <?php
   $user = wp_get_current_user();
   $duePattern = '/\.([\d]{2})/';
+  $duePaid = number_format((float)3305, 2, '.', '');
   $dueNow = number_format((float)1435.35345, 2, '.', '');
   $dueSoon = number_format((float)64, 2, '.', '');
 ?>
@@ -27,6 +28,10 @@
     <li>
       <div class="label">Due Next Week:</div>
       <div class="number"><?php echo preg_replace($duePattern, '<sup>$1</sup>', $dueSoon); ?></div>
+    </li>
+    <li>
+      <div class="label">Paid Last Week:</div>
+      <div class="number"><?php echo preg_replace($duePattern, '<sup>$1</sup>', $duePaid); ?></div>
     </li>
   </ul>
 </article>

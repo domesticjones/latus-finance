@@ -1,3 +1,135 @@
+@import 'config/colors';
+
 .hide-if-no-customize {
   display: none;
+}
+
+.column-image img {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+}
+
+#postimagediv .inside img {
+  width: 100%;
+  display: block;
+}
+
+.admin-payments {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+.account-payment {
+  display: flex;
+  align-items: center;
+  float: left;
+  margin: 0 0.5rem 0.5rem 0;
+  background-color: #cdcdcd;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+
+  span {
+    display: block;
+    opacity: 0.75;
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.25rem;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  &:first-of-type::after {
+    content: '';
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    margin-left: 0.25rem;
+    background-image: url('../images/icon-star.svg');
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+}
+
+.payment-account-type {
+  &-app::before { background-image: url('../images/icon-payment-app.svg'); }
+  &-auto::before { background-image: url('../images/icon-payment-auto.svg'); }
+  &-mail::before { background-image: url('../images/icon-payment-mail.svg'); }
+  &-person::before { background-image: url('../images/icon-payment-person.svg'); }
+  &-phone::before { background-image: url('../images/icon-payment-person.svg'); }
+  &-online::before { background-image: url('../images/icon-payment-online.svg'); }
+}
+
+.bill-dueterm ~ small {
+  display: block;
+}
+
+.bill-status {
+  display: inline-block;
+  margin: 0 0.5rem 0.5rem 0;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-width: 2px;
+  border-style: solid;
+
+  &-due {
+    background-color: #f6f930;
+    border-color: #f08700;
+    color: #f08700;
+  }
+
+  &-pastdue {
+    background-color: #92140c;
+    border-color: #250902;
+    color: #250902;
+  }
+
+  &-terminated {
+    background-color: #b6d7b9;
+    border-color: #82ac9f;
+    color: #82ac9f;
+  }
+
+  &-paid {
+    background-color: #2b9720;
+    border-color: #244f26;
+    color: #244f26;
+  }
+
+  &-balanceforward {
+    background-color: #f1a66a;
+    border-color: #f06543;
+    color: #f06543;
+  }
+
+  &-removed {
+    background-color: #816c61;
+    border-color: #575a4b;
+    color: #575a4b;
+  }
+}
+
+.bill-amount {
+  font-weight: bold;
+
+  small {
+    font-weight: normal;
+    display: block;
+    font-style: italic;
+  }
 }
