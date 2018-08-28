@@ -1,3 +1,6 @@
+/**
+  Global Website Header
+  ---------------------------------------------------------------------- */
 .header-top {
   padding: 1rem 0;
   z-index: 9999;
@@ -35,26 +38,13 @@
   height: 2.5rem;
 }
 
-.nav-header {
-  @include navMenu(dropdown);
-  margin-left: auto;
-
-  a {
-    color: $black;
-    padding: 0.5em 1em;
-
-    &:hover {
-      color: $black;
-    }
-  }
-}
-
 #responsive-nav-toggle {
   display: none;
 }
 
-/** Responsive Breakpoints
- ---------------------------------------------------------*/
+/**
+  Responsive Breakpoints
+  ---------------------------------------------------------------------- */
 @media (max-width: 1024px) {
   .header-top {
     padding: 1rem;

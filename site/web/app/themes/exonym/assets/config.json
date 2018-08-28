@@ -8,26 +8,20 @@
       "./scripts/admin.js",
       "./styles/admin.scss"
     ],
+    "editor": [
+      "./styles/editor.scss"
+    ],
     "login": [
       "./scripts/login.js",
       "./styles/login.scss"
-    ],
-    "editor": [
-      "./styles/editor.scss"
     ]
   },
+  "publicPath": "/app/themes/exonym",
+  "devUrl": "https://latus.dev",
+  "proxyUrl": "https://localhost:3000",
+  "cacheBusting": "[name]_[hash:8]",
   "watch": [
-    "functions/*.php",
     "*.php",
     "**/*.php"
-  ],
-  "browsers": [
-    "last 2 versions",
-    "android 4",
-    "opera 12"
-  ],
-  "publicPath": "/app/themes/exonym",
-  "devUrl": "http://chit.dev",
-  "proxyUrl": "http://localhost:3000",
-  "cacheBusting": "[name]_[hash:8]"
+  ]
 }

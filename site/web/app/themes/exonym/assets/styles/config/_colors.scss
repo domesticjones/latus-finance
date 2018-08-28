@@ -1,10 +1,13 @@
-$white:   #fff;
-$black:   #000;
+$white: #fff;
+$grey: #ccc;
+$black: #000;
+$red: #f00;
+$blue: #00f;
 
-// Status Colors
-$status-green:      #64a338;
-$status-yellow:     #fc0;
-$status-red:        #e03b24;
-$status-blue:       #3865a3;
-$status-blue-light: #87a2c7;
-$status-grey:       #cdcdcd;
+$color-scheme: (
+  color-white: $white,
+  color-grey: $grey,
+  color-black: $black,
+  color-red: $red,
+  color-blue: $blue
+);

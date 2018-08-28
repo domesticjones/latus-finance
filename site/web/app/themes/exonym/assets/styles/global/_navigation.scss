@@ -1,29 +1,7 @@
-/** Nav Menu Mixin
- ---------------------------------------------------------*/
-@mixin navMenu($style) {
-  @if $style == dropdown {
-    ul {
-      @include listStripped();
-      li { position: relative; float: left;
-        a { display: block; white-space: nowrap; }
-        & > ul { display: none; position: absolute; min-width: 100%; z-index: 999;
-          li { display: block; float: none; position: relative; }
-          ul { left: 100%; top: 0;
-            li a { min-width: 100%; }
-          }
-        }
-        &:hover > ul { display: block; }
-      }
-    }
-  } @else if $style == vertical {
-    ul { @include listStripped(); }
-  } @else if $style == horizontal {
-    ul { @include listStripped(inline-block); }
-  }
-}
+/**
+  Responsive Navigation
+  ---------------------------------------------------------------------- */
 
-/** Responsive Navigation
- ---------------------------------------------------------*/
 #responsive-nav-toggle {
   @include hamburgerMenu(9, $black, 0.75);
 }

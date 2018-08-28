@@ -1,4 +1,4 @@
-{
+module.exports = {
   "root": true,
   "extends": "eslint:recommended",
   "globals": {
@@ -22,7 +22,7 @@
     "sourceType": "module"
   },
   "plugins": [
-    "import",
+    "import"
   ],
   "settings": {
     "import/core-modules": [],
@@ -32,12 +32,16 @@
     ]
   },
   "rules": {
-    "comma-dangle": ["error", {
-      "arrays": "always-multiline",
-      "objects": "always-multiline",
-      "imports": "always-multiline",
-      "exports": "always-multiline",
-      "functions": "ignore"
-    }]
+    "no-console": 0,
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "ignore"
+      }
+    ]
   }
 }

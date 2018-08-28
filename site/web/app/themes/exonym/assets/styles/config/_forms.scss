@@ -18,7 +18,7 @@ $fh-input-height: 2.5em !default;
 $fh-input-width: 100% !default;
 $fh-input-max-width: auto !default;
 $fh-input-bg-color: $white !default;
-$fh-focus-bg-color: $white !default;
+$fh-focus-bg-color: $grey !default;
 $fh-focus-border-color: $fh-border-color !default;
 $fh-focus-font-color: $fh-font-color !default;
 
@@ -41,16 +41,16 @@ $fh-button-hover-font-color: $fh-font-color !default;
 $fh-centered: false !default;
 $fh-display: block !default;
 
-
 // Center/Left-Aligned Layout
 @mixin center-layout {
-	@if $fh-centered == true {
-		margin: 10px auto;
-		text-align: center;
-	}
-	@else {
-		margin: 10px 0;
-	}
+  @if $fh-centered == true {
+    margin: 10px auto;
+    text-align: center;
+  }
+
+  @else {
+    margin: 10px 0;
+  }
 }
 
 /* Global Reset Styles ------------------ */
@@ -63,30 +63,27 @@ optgroup,
 button,
 legend,
 fieldset {
-	box-sizing: border-box;
-	outline: none;
+  box-sizing: border-box;
+  outline: none;
+  font-family: $fh-font-family;
+  font-size: $fh-font-size;
+  color: $fh-font-color;
+  vertical-align: top;
+  display: $fh-display;
 
-	font-family: $fh-font-family;
-	font-size: $fh-font-size;
-	color: $fh-font-color;
-	vertical-align: top;
-
-	display: $fh-display;
-	@include center-layout;
+  @include center-layout;
 }
 
-
 datalist {
-	font-family: $fh-font-family;
-	font-size: $fh-font-size;
+  font-family: $fh-font-family;
+  font-size: $fh-font-size;
 }
 
 label {
-	display: $fh-display;
-	@include center-layout;
+  display: $fh-display;
+
+  @include center-layout;
 }
-
-
 
 /* Input & Textarea ------------------ */
 
@@ -108,13 +105,12 @@ input[list],
 input[type="file"],
 select,
 textarea {
-	width: $fh-input-width;
-	max-width: $fh-input-max-width;
-	padding: $fh-input-height / 5;
-	background-color: $fh-input-bg-color;
-
-	border-radius: $fh-border-radius;
-	border: $fh-border-width $fh-border-style $fh-border-color;
+  width: $fh-input-width;
+  max-width: $fh-input-max-width;
+  padding: $fh-input-height / 5;
+  background-color: $fh-input-bg-color;
+  border-radius: $fh-border-radius;
+  border: $fh-border-width $fh-border-style $fh-border-color;
 }
 
 /* Fields with standard height */
@@ -132,40 +128,41 @@ input[type="time"],
 input[type="url"],
 input[type="week"],
 input[list] {
-	height: $fh-input-height;
-	appearance: none;
+  height: $fh-input-height;
+  appearance: none;
 }
 
 /* Other */
 
 textarea {
-	appearance: none;
-	overflow: auto;
+  appearance: none;
+  overflow: auto;
 }
 
 input[type="range"] {
-	height: $fh-input-height;
-	width: $fh-input-width;
-	max-width: $fh-input-max-width;
+  height: $fh-input-height;
+  width: $fh-input-width;
+  max-width: $fh-input-max-width;
 }
 
 input[type="file"] {
-	min-height: $fh-input-height;
+  min-height: $fh-input-height;
 }
 
 input[type="search"] {
-	height: $fh-input-height;
-	appearance: none;
+  height: $fh-input-height;
+  appearance: none;
 }
+
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
-	appearance: none;
+  appearance: none;
 }
 
 input[type="checkbox"],
 input[type="radio"] {
-	display: inline-block;
-	vertical-align: middle;
+  display: inline-block;
+  vertical-align: middle;
 }
 // For checkbox and radio to be centered, need to wrap the input and label in a span -
 // .checkbox-container {
@@ -173,54 +170,56 @@ input[type="radio"] {
 // 	text-align: center;
 // }
 
-
 /* Select ------------------ */
 
 select {
-	height: $fh-input-height;
+  height: $fh-input-height;
 
-	@if $fh-allow-select-vendor-styling == false {
-		appearance: none;
-		&::-ms-expand {
-			display: none;
-		}
-	}
+  @if $fh-allow-select-vendor-styling == false {
+    appearance: none;
+
+    &::-ms-expand {
+      display: none;
+    }
+  }
 }
 
 select[multiple] {
-	height: auto;
-	min-height: $fh-input-height;
-	padding: 0;
+  height: auto;
+  min-height: $fh-input-height;
+  padding: 0;
 
-	option {
-		margin: 0;
-		padding: $fh-input-height / 5;
-	}
+  option {
+    margin: 0;
+    padding: $fh-input-height / 5;
+  }
 }
 
 /* Fieldset ------------------ */
 
 fieldset {
-	@if $fh-fieldset-bare == true {
-		padding: 0;
-		border: 0;
-	}
-	@else {
-		padding: 10px 25px;
-		border-radius: $fh-border-radius;
-		border: $fh-border-width $fh-border-style $fh-border-color;
-	}
+  @if $fh-fieldset-bare == true {
+    padding: 0;
+    border: 0;
+  }
+
+  @else {
+    padding: 10px 25px;
+    border-radius: $fh-border-radius;
+    border: $fh-border-width $fh-border-style $fh-border-color;
+  }
 }
 
 legend {
-	@if $fh-fieldset-bare == true {
-		padding: 0;
-		font-weight: inherit;
-	}
-	@else {
-		padding: 0 5px;
-		font-weight: 700;
-	}
+  @if $fh-fieldset-bare == true {
+    padding: 0;
+    font-weight: inherit;
+  }
+
+  @else {
+    padding: 0 5px;
+    font-weight: 700;
+  }
 }
 
 /* Buttons, Input Type Submit/Reset ------------------ */
@@ -231,25 +230,22 @@ input[type="button"],
 input[type="submit"],
 input[type="reset"],
 input[type="image"] {
-	height: $fh-button-height;
-	width: $fh-button-width;
-	max-width: $fh-button-max-width;
-	background-color: $fh-button-bg-color;
-	padding: $fh-input-height / 5;
-	cursor: pointer;
-
-	color: $fh-button-font-color;
-	font-weight: 700;
-
-	appearance: none;
-
-	border-radius: $fh-border-radius;
-	border: $fh-border-width $fh-border-style $fh-border-color;
+  height: $fh-button-height;
+  width: $fh-button-width;
+  max-width: $fh-button-max-width;
+  background-color: $fh-button-bg-color;
+  padding: $fh-input-height / 5;
+  cursor: pointer;
+  color: $fh-button-font-color;
+  font-weight: $font-bold;
+  appearance: none;
+  border-radius: $fh-border-radius;
+  border: $fh-border-width $fh-border-style $fh-border-color;
 }
 
 input[type="image"] {
-	text-align: center;
-	padding: $fh-input-height / 5;
+  text-align: center;
+  padding: $fh-input-height / 5;
 }
 
 /* States ------------------ */
@@ -259,21 +255,20 @@ textarea[disabled],
 select[disabled],
 option[disabled],
 button[disabled] {
-	cursor: not-allowed;
+  cursor: not-allowed;
 }
 
 input:focus,
 textarea:focus,
 select:focus,
-option:focus,
-button:focus  {
-	background-color: $fh-focus-bg-color;
-	border-color: $fh-focus-border-color;
+button:focus {
+  background-color: $fh-focus-bg-color;
+  border-color: $fh-focus-border-color;
 }
 
 input[type="checkbox"]:focus,
 input[type="radio"]:focus {
-	outline: $fh-focus-border-color solid 2px;
+  outline: $fh-focus-border-color solid 2px;
 }
 
 a.button:hover,
@@ -286,6 +281,6 @@ button:focus,
 input[type="button"]:focus,
 input[type="submit"]:focus,
 input[type="reset"]:focus {
-	background-color: $fh-button-hover-bg-color;
-	color: $fh-button-hover-font-color;
+  background-color: $fh-button-hover-bg-color;
+  color: $fh-button-hover-font-color;
 }
