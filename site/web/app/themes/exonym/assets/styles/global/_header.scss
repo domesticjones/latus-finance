@@ -1,61 +1,69 @@
 /**
-  Global Website Header
+  Header Navigation Icons
   ---------------------------------------------------------------------- */
-.header-top {
-  padding: 1rem 0;
-  z-index: 9999;
-  width: 100%;
-  background-color: $white;
+.nav-header {
+  position: fixed;
+  z-index: 999;
+  top: 5vw;
+  width: 10vw;
 
-  .wrap {
-    @include grid(space-between, center);
+  img,
+  span {
+    height: 7.5vw;
+    margin: 0 auto;
   }
 
-  .nav-social {
-    ul {
-      @include listStripped();
-      @include grid();
+  img {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: auto;
+  }
 
-      li {
-        margin: 0 0.5em;
-      }
-
-      a,
-      img {
-        display: block;
-        height: 2em;
-      }
-
-      span {
-        display: none;
-      }
-    }
+  &::before {
+    position: fixed;
+    top: -5vw;
+    z-index: 0;
+    content: '';
+    display: block;
+    background-color: $black;
+    width: 80vw;
+    height: 30vw;
+    box-shadow: $dropShadow;
   }
 }
 
-.logo-header {
-  display: block;
-  height: 2.5rem;
+$headerIconOffset: 80vw;
+$headerIconOffsetImage: 3.5vw;
+$headerIconOffsetBgX: 5vw;
+$headerIconOffsetBgY: 12.5vw;
+$headerIconOffsetBgR: 45deg;
+
+#nav-calendar {
+  right: $headerIconOffset;
+  left: $headerIconOffsetImage;
+
+  &::before {
+    right: $headerIconOffset;
+    transform: rotate(-$headerIconOffsetBgR) translate(-$headerIconOffsetBgX, $headerIconOffsetBgY);
+  }
 }
 
-#responsive-nav-toggle {
-  display: none;
+#nav-search {
+  left: $headerIconOffset;
+  right: 0;
+
+  img {
+    margin-left: auto;
+    margin-right: -5vw;
+  }
+
+  &::before {
+    left: $headerIconOffset;
+    transform: rotate($headerIconOffsetBgR) translate($headerIconOffsetBgX, $headerIconOffsetBgY);
+  }
 }
 
 /**
   Responsive Breakpoints
   ---------------------------------------------------------------------- */
-@media (max-width: 1024px) {
-  .header-top {
-    padding: 1rem;
-  }
-
-  .nav-header,
-  .header-top .nav-social {
-    display: none;
-  }
-
-  #responsive-nav-toggle {
-    display: block;
-  }
-}

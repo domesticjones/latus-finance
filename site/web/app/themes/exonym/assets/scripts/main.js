@@ -1,4 +1,6 @@
+require('jquery');
 require('jquery-visible');
+require('../../node_modules/sticky-kit/dist/sticky-kit.min.js');
 
 jQuery(document).ready(() => {
 	// Wrap embedded objects and force them into 16:9

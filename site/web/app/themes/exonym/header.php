@@ -13,8 +13,11 @@
 	</head>
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 		<div id="container">
-      <header id="header" class="header-top" role="banner" itemscope itemtype="http://schema.org/WPHeader">
-        <div class="wrap">
-					Header Menu
-        </div>
+      <header id="nav-calendar" class="nav-header">
+				<img src="<?php echo asset_path('images/icon-calendar.svg'); ?>" alt="Icon for toggling the calendar" />
+				<span></span>
       </header>
+			<header id="nav-search" class="nav-header">
+				<img src="<?php echo asset_path('images/icon-search.svg'); ?>" alt="Icon for toggling the bill search" />
+				<span></span>
+			</header>
